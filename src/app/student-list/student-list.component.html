@@ -8,8 +8,8 @@
                 <th>email</th>
                 <th>gender</th>
                 <th>contactNo.</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Action</th>
+            
             </tr>
 
       </thead>
@@ -22,7 +22,8 @@
               <td>{{student.gender}}</td>
               <td>{{student.phoneNumber}}</td>
               <td>
-                  <button routerLink="/edit/{{student.id}}" type="button" class="btn btn-primary">Update</button>
+                  <button routerLink="/edit/{{student.id}}" type="button" class="btn btn-primary"  style="margin-left: 10px">Update</button>
+                  <button (click)="deleteStudent(student.id)" type="button" class="btn btn-danger" style="margin-left: 10px" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
               </td>
           </tr> 
       </tbody>    

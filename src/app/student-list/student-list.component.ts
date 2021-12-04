@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import {Student} from '../student';
 import {StudentService} from '../student.service'
 import { EditStudentComponent } from '../edit-student/edit-student.component';
+import { error } from '@angular/compiler/src/util';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -31,7 +33,19 @@ export class StudentListComponent implements OnInit {
       this.students= data;
     })
   }
+  
+  deleteStudent(id:number)
+  {
+      this.studentService.deleteStudentById(id).subscribe((data:any)=>
+      {
+        console.log(data);
+      })
 
+      this.route.navigate(['/students']);
+     
+     
+      
+  }
   
     
 }

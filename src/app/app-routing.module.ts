@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'students',component: StudentListComponent},
   {path:'create-student',component:CreateStudentComponent},
   {path:'edit/:id',component:EditStudentComponent},
+  {path:'delete/:id',component:StudentListComponent},
   {path:'',redirectTo:'students',pathMatch:'full'},
   {path:"**",component:PageNotFoundComponent}
   

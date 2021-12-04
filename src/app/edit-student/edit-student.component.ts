@@ -11,7 +11,7 @@ import { StudentService } from '../student.service';
 })
 export class EditStudentComponent implements OnInit {
 
-  studentId:string="";
+  studentId:number=0;
   student={firstName:null,lastName:null,email:null,gender:null,phoneNumber:null};
   constructor(private activateRoute:ActivatedRoute,private studentService:StudentService,private router:Router) { }
 
@@ -22,19 +22,23 @@ export class EditStudentComponent implements OnInit {
     {
       this.student=data;
     })
- 
+     
      }
 
   
 
-  editStudentForm(form:NgForm)
+  editStudentForm()
   {
     this.studentService.updateStudent(this.studentId,this.student).subscribe((data)=>
     {
       console.log(data);
+      
     })
 
     this.router.navigate(['/students']);
+    
 
   }
+
+
 }
