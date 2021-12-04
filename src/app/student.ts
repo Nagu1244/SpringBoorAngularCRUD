@@ -1,0 +1,10 @@
+export interface Student {
+
+    id:number;
+    firstName:String;
+    lastName:String;
+    email:String;
+    gender:String;
+    phoneNumber:number;
+}
+

@@ -1,0 +1,29 @@
+<h2>Student List</h2>
+<table class="table table-striped table-bordered  table-hover" >
+      <thead class="thead-dark">
+            <tr>  
+                <th>Id</th>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>email</th>
+                <th>gender</th>
+                <th>contactNo.</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+      </thead>
+      <tbody>
+           <tr *ngFor="let student of students">
+               <td>{{student.id}}</td>
+              <td>{{student.firstName}}</td>
+              <td>{{student.lastName}}</td>
+              <td>{{student.email}}</td>
+              <td>{{student.gender}}</td>
+              <td>{{student.phoneNumber}}</td>
+              <td>
+                  <button routerLink="/edit/{{student.id}}" type="button" class="btn btn-primary">Update</button>
+              </td>
+          </tr> 
+      </tbody>    
+</table>
