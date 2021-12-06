@@ -17,12 +17,13 @@ export class StudentService {
    baseURl3="http://localhost:8080/api/v1/update"  ;
    deleteAPI:any="http://localhost:8080/api/v1/delete/";
 
-
+   
   constructor(private httpClient:HttpClient) { }
 
   getStudentsList()
   {
-    return this.httpClient.get(this.baseURl);
+   return this.httpClient.get(this.baseURl);
+   
   }
   createStudent(formvalues:any)
   {
@@ -43,3 +44,4 @@ export class StudentService {
      return this.httpClient.delete(this.deleteAPI +id); 
   }
 }
+

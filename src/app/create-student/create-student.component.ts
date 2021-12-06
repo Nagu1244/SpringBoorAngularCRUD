@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-//import { StudentForm } from '../student-form';
+import { StudentForm } from '../student-form';
 import { StudentService } from '../student.service';
 
 
@@ -28,13 +28,19 @@ export class CreateStudentComponent implements OnInit {
    
   Submit(form:NgForm)
   {
-     console.log("form",form);
-     console.log("model",this.student);
+     //console.log("form",form);
+     //console.log("model",this.student);
      this.studentService.createStudent(this.student).subscribe((data)=>
      {
        console.log("hint",data);
-     })
+       
+     },error=>{
+     console.log("Model Exception",error);
+     console.log("second");
+     this.router.navigate(['/students']
+     );
+    })
 
-     this.gotoStudentsList();
+     console.log("first");
   }
 }

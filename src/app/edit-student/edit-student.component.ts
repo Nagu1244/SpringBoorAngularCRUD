@@ -33,9 +33,11 @@ export class EditStudentComponent implements OnInit {
     {
       console.log(data);
       
+    },error=>
+    {
+     console.log("Model Exception",error);
+     this.router.navigate(['/students'])
     })
-
-    this.router.navigate(['/students']);
     
 
   }

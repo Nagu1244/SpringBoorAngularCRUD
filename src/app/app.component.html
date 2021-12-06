@@ -3,13 +3,17 @@
         <img [src]='imgUrl'  width=150 height=80>
         <h3 class="first-txt"></h3>
         <li class="nav-item">
-            <a  routerLink="students" routerLinkActive="active" class="nav-link">Students List</a>
+            <a  routerLink="students" routerLinkActive="active" class="nav-link" class="auth-modal-toggle btn btn-primary ms-2 me-1">Students List</a>
         </li>
         <li class="nav-item">
-            <a routerLink="create-student" routerLinkActive="active" class="nav-link">Add Student</a>
+            <a routerLink="create-student" routerLinkActive="active" class="nav-link" class="auth-modal-toggle btn btn-primary ms-2 me-1">Add Student</a>
         </li>
+         <li class="float-right nav-item" >
+            <a routerLink="login" routerLinkActive="active"  class=" nav-link auth-modal-toggle btn btn-primary">Login</a>
+        </li> 
         
     </ul> 
+    
 </nav>
 <h1 class="text-center"></h1>
 <div class="container">

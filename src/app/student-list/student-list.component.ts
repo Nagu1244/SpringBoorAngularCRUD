@@ -5,6 +5,7 @@ import {StudentService} from '../student.service'
 import { EditStudentComponent } from '../edit-student/edit-student.component';
 import { error } from '@angular/compiler/src/util';
 import { Observable } from 'rxjs';
+import { ResourceLoader } from '@angular/compiler';
 
 
 @Component({
@@ -25,9 +26,9 @@ export class StudentListComponent implements OnInit {
    
    this.getStudents();
    
-  }
+}
 
-  private getStudents()
+  getStudents()
   {
     this.studentService.getStudentsList().subscribe( (data:any) =>{
       this.students= data;
@@ -39,9 +40,10 @@ export class StudentListComponent implements OnInit {
       this.studentService.deleteStudentById(id).subscribe((data:any)=>
       {
         console.log(data);
+       
       })
-
-      this.route.navigate(['/students']);
+      
+     
      
      
       
@@ -49,3 +51,7 @@ export class StudentListComponent implements OnInit {
   
     
 }
+function reload() {
+  throw new Error('Function not implemented.');
+}
+

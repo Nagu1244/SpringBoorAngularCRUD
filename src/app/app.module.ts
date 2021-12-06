@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { StudentService } from './student.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -19,13 +22,18 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CreateStudentComponent,
     EditStudentComponent,
     PageNotFoundComponent,
+    LoginComponent,
+    RegistrationComponent,
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserModule,
+    NgxPaginationModule
+
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]
